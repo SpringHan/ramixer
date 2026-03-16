@@ -33,7 +33,7 @@ impl AMixer {
 
     pub fn change_volume(&mut self, steps: u16, increase: bool) -> AppResult<()> {
         let cmd = format!(
-            "amixer set Master {}%{}",
+            "amixer -M set Master {}%{}",
             steps,
             if increase {
                 "+"
