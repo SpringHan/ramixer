@@ -7,6 +7,7 @@ So this is a nice replacement, only for me.
 
 ## KeyBinding
 | Keybinding         | Action                |
+|--------------------|-----------------------|
 | `Up` / `=`         | Increase 5% volume    |
 | `Down` / `-`       | Decrease 5% volume    |
 | `Shift+Up` / `+`   | Increase 10% volume   |
