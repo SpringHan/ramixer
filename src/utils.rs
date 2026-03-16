@@ -81,7 +81,7 @@ impl AMixer {
             .arg(if let Some(cmd) = cmd {
                 format!("{} | grep -oP '\\d+(?=%)' | head -1", cmd)
             } else {
-                String::from("amixer get Master | grep -oP '\\d+(?=%)' | head -1")
+                String::from("amixer -M get Master | grep -oP '\\d+(?=%)' | head -1")
             })
             .output()?;
 
