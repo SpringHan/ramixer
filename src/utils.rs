@@ -27,6 +27,19 @@ impl AMixer {
         })
     }
 
+    /// Create a mixer that only tracks the master volume.
+    ///
+    /// Used by the non-interactive mode, which does not render the mute
+    /// status of the Speaker/Headphone controls, so querying them is
+    /// unnecessary work that could also fail on machines without them.
+    pub fn volume_only() -> AppResult<Self> {
+        Ok(Self {
+            current_volume: Self::get_volume_after_exec(None)?,
+            speaker_mute: false,
+            headphone_mute: false,
+        })
+    }
+
     pub fn volume(&self) -> u16 {
         self.current_volume
     }
